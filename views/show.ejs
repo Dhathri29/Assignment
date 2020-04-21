@@ -1,0 +1,34 @@
+<%- include ('./partials/header') %>
+
+<div class="show">
+	<div class="show__links">
+		<a href="/">Home</a>
+		<a href="/query">Query record</a>
+		<a href="/createrecord">Create New Record</a>
+	</div>
+
+	<div class="show__data">
+		<h2 class="heading-2">All Records</h2>
+
+		<table class="show__data--table">
+			<tr>
+				<th>Id</th>
+				<th>State</th>
+				<th>Female</th>
+				<th>Male</th>
+				<th>Total</th>
+			</tr>
+			<% for(let i=0; i < results.length; i++) { %>
+			<tr>
+				<td><%= results[i].id %></td>
+				<td><%= results[i].state %></td>
+				<td><%= results[i].female %></td>
+				<td><%= results[i].male %></td>
+				<td><%= results[i].total %></td>
+			</tr>
+			<% } %>
+		</table>
+	</div>
+</div>
+
+<%- include ('./partials/footer') %>

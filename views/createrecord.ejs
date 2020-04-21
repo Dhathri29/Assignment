@@ -1,0 +1,15 @@
+<%- include ('./partials/header') %>
+
+<form class="newRecord" action="/createrecord" method="POST">
+	<h2 class="heading-2">New Record</h2>
+	<hr>
+	<input type="text" name="state" placeholder="State" />
+	<input type="number" name="female" placeholder="Female" />
+	<input type="number" name="male" placeholder="Male" />
+	<div class="newRecord__btn">
+		<button class="btn" type="submit">Submit</button>
+		<a class="btn" href="/show">Go Back</a>
+	</div>
+</form>
+
+<%- include ('./partials/footer') %>

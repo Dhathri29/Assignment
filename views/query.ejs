@@ -1,0 +1,57 @@
+<%- include ('./partials/header') %>
+
+<div class="query">
+
+	<h2 class="heading-2">Submit your query</h2>
+
+	<a class="btn_links" href="/show">Show all records</a>
+
+	<form class="query__form" action="/query" method="POST">
+		<!-- <input type="text" name="query" placeholder="query" /> -->
+		<select class="query__dropdown" name="query">
+			<option>Select an option</option>
+			<option value="andhra pradesh">Andhra Pradesh</option>
+			<option value="arunachal pradesh">Arunachal Pradesh</option>
+			<option value="assam">Assam</option>
+			<option value="bihar">Bihar</option>
+			<option value="chattisgarh">Chattisgarh</option>
+			<option value="goa">Goa</option>
+			<option value="gujrat">Gujrat</option>
+			<option value="bihar">Haryana</option>
+			<option value="himachal pradesh">Himachal Pradesh</option>
+			<option value="jharkhand">Jharkhand</option>
+			<option value="karnataka">Karnataka</option>
+			<option value="kerala">Kerala</option>
+			<option value="madhya pradesh">Madhya Pradesh</option>
+		</select>
+		<button class="btn" type="submit">Submit</button>
+	</form>
+
+	<% if(result.length) { %>
+	<h2 class="heading-2">Results</h2>
+	<table class="query__res">
+		<tr>
+			<td>State: </td>
+			<td><%= result[0].state %></td>
+		</tr>
+		<tr>
+			<td>Male: </td>
+			<td><%= result[0].male %></td>
+		</tr>
+		<tr>
+			<td>Female: </td>
+			<td><%= result[0].female %></td>
+		</tr>
+		<tr>
+			<td>Total: </td>
+			<td><%= result[0].total %></td>
+		</tr>
+	</table>
+
+	<% } else { %>
+	<h2 class="heading-2">No Records Found</h2>
+	<% } %>
+
+</div>
+
+<%- include ('./partials/footer') %>
